@@ -1,0 +1,4 @@
+[package]
+name = "doc-maker"
+version = "0.0.1"
+entrypoint = "lib.typ"
