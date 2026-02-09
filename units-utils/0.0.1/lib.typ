@@ -3,6 +3,9 @@
 #let rnd2 = n => { calc.round(n, digits: 2) }
 
 #let auto-si = n => {
+  if n == 0 {
+    return (n, "")
+  }
   let digits = calc.log(calc.abs(n))
   let pos = calc.floor(digits / 3) * 3
   if pos <= -9 {
