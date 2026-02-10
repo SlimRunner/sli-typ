@@ -1,4 +1,5 @@
 #import "@preview/zap:0.5.0"
+#import "@preview/cetz:0.4.2"
 
 #let draw-circuit = (joints, elems) => {
   set text(size: 10pt)
