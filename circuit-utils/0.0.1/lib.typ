@@ -1,7 +1,7 @@
 #import "@preview/zap:0.5.0"
 #import "@preview/cetz:0.4.2"
 
-#let draw-circuit = (joints, elems) => {
+#let draw-circuit = (joints, elems, style: ()) => {
   set text(size: 10pt)
   zap.circuit({
     import zap: *
@@ -12,6 +12,7 @@
       inductor: (scale: (x: 0.75, y: 0.75), variant: "ieee"),
       capacitor: (scale: (x: 0.5, y: 0.75)),
       switch: (scale: (x: 0.75, y: 1.25)),
+      ..style,
     )
 
     for (name, group) in elems {
