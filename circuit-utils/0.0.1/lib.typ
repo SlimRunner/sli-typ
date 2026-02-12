@@ -109,7 +109,7 @@
   let arc-start = center.zip((arc-radius, 0)).map(((a, b)) => a + b)
   return cetz.draw.on-layer(-1, {
     cetz.draw.merge-path(
-      fill: gray,
+      fill: silver,
       stroke: none,
       {
         cetz.draw.line(vtx.at(0), vtx.at(1))
