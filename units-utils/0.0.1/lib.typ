@@ -2,11 +2,11 @@
 
 #let rnd2 = n => { calc.round(n, digits: 2) }
 
-#let auto-si = n => {
+#let auto-si = (n, offset: 0) => {
   if n == 0 {
     return (n, "")
   }
-  let digits = calc.log(calc.abs(n))
+  let digits = calc.log(calc.abs(n)) + offset
   let pos = calc.floor(digits / 3) * 3
   if pos <= -9 {
     return (n * 1e9, "nano ")
@@ -27,11 +27,11 @@
 
 #let unit-functor-gen = (name, find-si: false) => {
   if find-si {
-    n => {
-      let (n, p) = auto-si(n);
+    (n, offset: 0) => {
+      let (n, p) = auto-si(n, offset: offset);
       qty(n, p + name)
     }
   } else {
-    n => qty(n, name)
+    (n, offset: 0) => qty(n, name)
   }
 }
