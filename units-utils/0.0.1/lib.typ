@@ -1,6 +1,7 @@
 #import "@preview/unify:0.7.1": qty, unit
 
 #let rnd2 = n => { calc.round(n, digits: 2) }
+#let rnd4 = n => { calc.round(n, digits: 4) }
 
 #let auto-si = (n, offset: 0) => {
   if n == 0 {
