@@ -14,6 +14,8 @@
   style-props: (),
   plot-props: (),
   func-props: (),
+  func-callback: none,
+  plot-callback: none,
 ) = {
   cetz.canvas({
     import cetz.draw: *
@@ -48,7 +50,14 @@
           domain: x-range,
           ..(func-props),
         )
+        if (func-callback != none and type(func-callback) == function) {
+          func-callback()
+        }
       },
     )
+
+    if (plot-callback != none and type(plot-callback) == function) {
+      plot-callback()
+    }
   })
 }
